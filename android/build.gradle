@@ -2,7 +2,6 @@ group 'com.oohyugi.sms_otp_auto_verify'
 version '1.0-SNAPSHOT'
 
 buildscript {
-    ext.kotlin_version = '1.7.0'
     repositories {
         google()
         mavenCentral()
@@ -10,7 +9,6 @@ buildscript {
 
     dependencies {
         classpath 'com.android.tools.build:gradle:7.2.2'
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
     }
 }
 
@@ -30,15 +28,6 @@ android {
         namespace = "com.oohyugi.sms_otp_auto_verify"
     }
 
-    compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_17
-        targetCompatibility = JavaVersion.VERSION_17
-    }
-
-    kotlinOptions {
-        jvmTarget = '17'
-    }
-
     sourceSets {
         main.java.srcDirs += 'src/main/kotlin'
     }
@@ -52,10 +41,6 @@ android {
 }
 
 dependencies {
-    constraints{
-        implementation 'org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.7.0'
-        implementation 'org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.7.0'
-    }
     implementation 'com.google.android.gms:play-services-auth:20.7.0'
     implementation 'com.google.android.gms:play-services-auth-api-phone:18.0.2'
     implementation "androidx.core:core-ktx:1.12.0"
